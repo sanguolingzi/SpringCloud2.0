@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/BankRollFeign/BankRollFeign.iml" filepath="$PROJECT_DIR$/BankRollFeign/BankRollFeign.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BankRollServer/BankRollServer.iml" filepath="$PROJECT_DIR$/BankRollServer/BankRollServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CustomerFeign/CustomerFeign.iml" filepath="$PROJECT_DIR$/CustomerFeign/CustomerFeign.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CustomerServer/CustomerServer.iml" filepath="$PROJECT_DIR$/CustomerServer/CustomerServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EurekaServer/EurekaServer.iml" filepath="$PROJECT_DIR$/EurekaServer/EurekaServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OrderServer/OrderServer.iml" filepath="$PROJECT_DIR$/OrderServer/OrderServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/core/core.iml" filepath="$PROJECT_DIR$/core/core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pojo/pojo.iml" filepath="$PROJECT_DIR$/pojo/pojo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springCloudDemo2.iml" filepath="$PROJECT_DIR$/springCloudDemo2.iml" />
+    </modules>
+  </component>
+</project>

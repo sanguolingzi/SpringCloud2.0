@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>testSpringCloud</groupId>
+    <artifactId>springCloudDemo2</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <log4j.version>1.2.17</log4j.version>
+        <slf4j.version>1.7.25</slf4j.version>
+        <logback.version>1.2.3</logback.version>
+        <spring.version>4.3.14.RELEASE</spring.version>
+        <httpclient.version>4.5.5</httpclient.version>
+        <fastjson.version>1.2.46</fastjson.version>
+        <tkmapper.version>3.5.0</tkmapper.version>
+        <jedis.version>2.9.0</jedis.version>
+        <ehcache.version>2.10.4</ehcache.version>
+        <spring.data.redis>1.7.5.RELEASE</spring.data.redis>
+        <commonsio.version>2.4</commonsio.version>
+        <commonscodec.version>1.11</commonscodec.version>
+        <mysql.version>5.1.46</mysql.version>
+        <hikariCP.version>3.2.0</hikariCP.version>
+        <druid.version>1.1.10</druid.version>
+        <javax.el.version>2.2.4</javax.el.version>
+        <org.glassfish.web.version>2.2.4</org.glassfish.web.version>
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+    <modules>
+        <module>core</module>
+        <module>EurekaServer</module>
+        <module>pojo</module>
+        <module>BankRollServer</module>
+        <module>OrderServer</module>
+        <module>BankRollFeign</module>
+        <module>CustomerFeign</module>
+        <module>CustomerServer</module>
+    </modules>
+
+    <repositories>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
