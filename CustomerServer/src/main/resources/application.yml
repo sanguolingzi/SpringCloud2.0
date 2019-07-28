@@ -51,9 +51,9 @@ feign:
       httpclient:
           enable: true
 
-management:
-   security:
-    enabled: false
+#management:
+#   security:
+#    enabled: false
 
 customer:
     message: 你好中国人更新后
@@ -65,10 +65,10 @@ mybatis:
   type-aliases-package: pojo
 
 # 通用mapper配置
-mapper:
-  mappers: mybaties.mapper.BusiMapper,mybaties.mapper.InfoMapper
-  not-empty: false
-  identity: MYSQL
+#mapper:
+#  mappers: mybaties.mapper.BusiMapper,mybaties.mapper.InfoMapper
+#  not-empty: false
+#  identity: MYSQL
 
 #分页插件配置
 pagehelper:

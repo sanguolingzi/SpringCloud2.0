@@ -29,12 +29,12 @@ import java.net.UnknownHostException;
 @Configuration
 public class BankRollConfig {
 
-    @Bean
+    //@Bean
     public ClientHttpRequestFactory httpRequestFactory() {
         return new HttpComponentsClientHttpRequestFactory(httpClient());
     }
 
-    @Bean
+    //@Bean
     public HttpClient httpClient() {
         Registry<ConnectionSocketFactory> registry = RegistryBuilder.<ConnectionSocketFactory>create()
                 .register("http", PlainConnectionSocketFactory.getSocketFactory())

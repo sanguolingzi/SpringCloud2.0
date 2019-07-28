@@ -11,10 +11,19 @@ import tk.mybatis.spring.annotation.MapperScan;
  * on 2018/1/30.
  */
 @Configuration
-// core包中的内置实现，基础框架使用时可以使用，也可以自己实现接口定制
-@MapperScan(basePackages = {"" +
-        //"mybaties.mapper",
-        "demo.business.mapper"})
+//配置文件中的配置不生效改在这里用编码的方式额皮质
+@MapperScan(
+        value = "tk.mybatis.mapper.annotation",
+        properties = {
+                "mappers=mybaties.mapper.BusiMapper,mybaties.mapper.InfoMapper",
+                "notEmpty=true",
+                "identity=MYSQL"
+        },
+        basePackages = {"" +
+                //"mybaties.mapper",
+                "demo.business.mapper"
+        }
+)
 /*
 @ComponentScan(basePackages = {
         "com.yinhetianze.common.business",
@@ -23,6 +32,7 @@ import tk.mybatis.spring.annotation.MapperScan;
 })
 */
 //@ServletComponentScan("com.yinhetianze.web")
+// core包中的内置实现，基础框架使用时可以使用，也可以自己实现接口定制
 public class ComponentsConfig
 {
 

@@ -4,12 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>springCloudDemo2</artifactId>
-        <groupId>testSpringCloud</groupId>
+        <groupId>testSpringCloud2</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
+    <groupId>testSpringCloud2</groupId>
     <artifactId>CustomerFeign</artifactId>
+    <version>1.0-SNAPSHOT</version>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -22,13 +23,13 @@
         </dependency>
 
         <dependency>
-            <groupId>testSpringCloud</groupId>
+            <groupId>testSpringCloud2</groupId>
             <artifactId>core</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
         <dependency>
-            <groupId>testSpringCloud</groupId>
+            <groupId>testSpringCloud2</groupId>
             <artifactId>pojo</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>

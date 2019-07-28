@@ -10,7 +10,7 @@
     </parent>
     -->
     <modelVersion>4.0.0</modelVersion>
-    <groupId>testSpringCloud</groupId>
+    <groupId>testSpringCloud2</groupId>
     <version>1.0-SNAPSHOT</version>
     <artifactId>OrderServer</artifactId>
     <parent>
@@ -25,30 +25,62 @@
         <java.version>1.8</java.version>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>org.bytesoft</groupId>
+            <artifactId>bytetcc-supports-springcloud</artifactId>
+            <version>0.5.3</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.cloud</groupId>
+                    <artifactId>spring-cloud-zookeeper-core</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>log4j</groupId>
+                    <artifactId>log4j</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework.cloud</groupId>
+                    <artifactId>spring-cloud-zookeeper-discovery</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.netflix.eureka</groupId>
+                    <artifactId>eureka-client</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework.cloud</groupId>
+                    <artifactId>spring-cloud-consul-discovery</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
         <!-- pojo -->
         <dependency>
             <artifactId>pojo</artifactId>
-            <groupId>testSpringCloud</groupId>
+            <groupId>testSpringCloud2</groupId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
         <!-- core -->
         <dependency>
-            <groupId>testSpringCloud</groupId>
+            <groupId>testSpringCloud2</groupId>
             <artifactId>core</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
         <!-- bankrollFeign-->
         <dependency>
-            <groupId>testSpringCloud</groupId>
+            <groupId>testSpringCloud2</groupId>
             <artifactId>BankRollFeign</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
         <!-- customerFeign-->
         <dependency>
-            <groupId>testSpringCloud</groupId>
+            <groupId>testSpringCloud2</groupId>
             <artifactId>CustomerFeign</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
@@ -131,16 +163,18 @@
             <artifactId>druid</artifactId>
             <version>1.1.10</version>
         </dependency>
+        <!--
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
             <version>1.1.10</version>
         </dependency>
+        -->
         <!--mapper-->
         <dependency>
             <groupId>tk.mybatis</groupId>
             <artifactId>mapper-spring-boot-starter</artifactId>
-            <version>2.0.4</version>
+            <version>2.0.2</version>
         </dependency>
         <!--pagehelper-->
         <dependency>
