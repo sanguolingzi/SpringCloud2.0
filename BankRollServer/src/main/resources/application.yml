@@ -4,9 +4,12 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
   instance:
     # 每间隔1s，向服务端发送一次心跳，证明自己依然”存活“
-    lease-renewal-interval-in-seconds: 5
+    lease-renewal-interval-in-seconds: 30
     # 告诉服务端，如果我2s之内没有给你发心跳，就代表我“死”了，将我踢出掉。
-    lease-expiration-duration-in-seconds: 10
+    lease-expiration-duration-in-seconds: 90
+    health-check-url-path: /actuator/health
+
+
 server:
   port: 8774
 spring:
@@ -41,6 +44,14 @@ spring:
     #      filters: stat
     #      connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
     #      use-global-data-source-stat: true
+  zipkin:
+    base-url: http://localhost:9411/
+  sleuth:
+    web:
+      client:
+        enabled: true
+    sampler:
+      probability: 1.0 #采样比例 1.0 代表全部需要 0.1是默认值
 
 
 #ribbon:
@@ -69,9 +80,14 @@ feign:
       httpclient:
           enable: true
 
-#management:
-#   security:
-#    enabled: false
+management:
+   endpoints:
+     web:
+        exposure:
+          include: "*"
+   endpoint:
+     health:
+       show-details: always
 
 
 #mybatis配置

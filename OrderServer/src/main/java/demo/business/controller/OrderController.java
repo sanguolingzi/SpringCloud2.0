@@ -21,6 +21,11 @@ public class OrderController {
         return ResponseDataUtil.toSuccess(orderInfoServiceImpl.getOrderInfo(orderId));
     }
 
+    @GetMapping(value="getOrderInfoForTestSleuth")
+    public ResponseData<OrderModel> getOrderInfoForTestSleuth(@RequestParam("orderId") String orderId){
+        return ResponseDataUtil.toSuccess(orderInfoServiceImpl.getOrderInfoForTestSleuth(orderId));
+    }
+
     //-------------------------------------------POST------------------------------------
     @Autowired
     private OrderBusiService orderBusiServiceImpl;

@@ -41,6 +41,7 @@
         <module>BankRollFeign</module>
         <module>CustomerFeign</module>
         <module>CustomerServer</module>
+        <module>BootAdmin</module>
     </modules>
 
     <repositories>

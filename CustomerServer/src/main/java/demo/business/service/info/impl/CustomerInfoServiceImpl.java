@@ -1,5 +1,6 @@
 package demo.business.service.info.impl;
 
+import demo.business.annotation.ForElExpression;
 import demo.business.mapper.info.CustomerInfoMapper;
 import demo.business.service.info.CustomerInfoService;
 import model.custoemr.CustomerModel;
@@ -16,6 +17,7 @@ public class CustomerInfoServiceImpl implements CustomerInfoService
     private CustomerInfoMapper customerInfoMapper;
 
 
+
     @Override
     public CustomerModel getCustomerInfo(String customerId) {
         CustomerPojo customerPojo = new CustomerPojo();
@@ -26,5 +28,16 @@ public class CustomerInfoServiceImpl implements CustomerInfoService
         CustomerModel customerModel = new CustomerModel();
         BeanUtils.copyProperties(customerPojo,customerModel);
         return customerModel;
+    }
+
+    @Override
+    @ForElExpression(elKey= "#key")
+    public void forElExpressMethod(String key) {
+        System.out.println("key:"+key);
+    }
+
+    @Override
+    public void testSleuth() {
+
     }
 }

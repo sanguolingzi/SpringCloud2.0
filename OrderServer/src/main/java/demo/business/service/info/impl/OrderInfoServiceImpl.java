@@ -1,5 +1,6 @@
 package demo.business.service.info.impl;
 
+import demo.business.feign.BankrollFeignService;
 import demo.business.feign.CustomerFeignService;
 import demo.business.httpresponse.ResponseData;
 import demo.business.mapper.info.OrderInfoMapper;
@@ -21,6 +22,9 @@ public class OrderInfoServiceImpl implements OrderInfoService
     @Autowired
     private CustomerFeignService customerFeignService;
 
+    @Autowired
+    private BankrollFeignService bankrollFeignService;
+
     @Override
     public OrderModel getOrderInfo(String orderId) {
         Assert.notNull(orderId,"订单信息为空!");
@@ -33,6 +37,14 @@ public class OrderInfoServiceImpl implements OrderInfoService
         if(responseData.success()){
             orderModel.setCustomerName(responseData.getData().getNickName());
         }
+        return orderModel;
+    }
+
+
+    @Override
+    public OrderModel getOrderInfoForTestSleuth(String orderId) {
+        OrderModel orderModel = getOrderInfo(orderId);
+        bankrollFeignService.getBankRollInfo(orderModel.getCustomerId().toString());
         return orderModel;
     }
 }

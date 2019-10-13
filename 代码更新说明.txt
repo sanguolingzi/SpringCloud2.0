@@ -1,0 +1,33 @@
+2019-10-13
+1、增加了springcloud链路追踪配置,使用的是zipkin+sleuth的方式
+   这种方式需在pom文件中引入如下配置。另外还需单独启用zipkin的一个server端
+      <!-- zipkin -->
+       <dependency>
+           <groupId>org.springframework.cloud</groupId>
+           <artifactId>spring-cloud-starter-zipkin</artifactId>
+       </dependency>
+       <!-- sleuth -->
+       <dependency>
+           <groupId>org.springframework.cloud</groupId>
+           <artifactId>spring-cloud-starter-sleuth</artifactId>
+       </dependency>
+
+2、增加了spring-boot-admin来走监控服务信息的监控处理
+   新增了BootAdmin模块作为监控的服务端
+   客户端Pom文件需引入如下配置
+   <dependency>
+               <groupId>org.springframework.boot</groupId>
+               <artifactId>spring-boot-starter-actuator</artifactId>
+   </dependency>
+   且application.yml中还需要增加如下配置,开放actutor的监控信息
+   management:
+      endpoints:
+        web:
+           exposure:
+             include: "*"
+      endpoint:
+        health:
+          show-details: always
+   还要在eureka.instance 下增加
+   health-check-url-path: /actuator/health
+   启动成功后,直接访问BootAdmin服务  http://localhost:port 就会出现监控界面
